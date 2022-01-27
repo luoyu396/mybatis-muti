@@ -1,7 +1,7 @@
 package com.example.mybatismuti.db1.service;
 
-import com.example.mybatisdemo.bean.User;
-import com.example.mybatisdemo.dao.UserDao;
+import com.example.mybatismuti.bean.User;
+import com.example.mybatismuti.db1.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -59,10 +59,4 @@ public class UserService {
         userDao.updateUser("Daisy", 19, 4000.0, 6);
     }
 
-    /**
-     * 根据名字查找用户
-     */
-    public User newSelectUserByName(String name) {
-        return userDao.newFindUserByName(name);
-    }
 }

@@ -1,7 +1,9 @@
 package com.example.mybatismuti.controller;
 
-import com.example.mybatisdemo.bean.User;
-import com.example.mybatisdemo.service.UserService;
+import com.example.mybatismuti.bean.Money;
+import com.example.mybatismuti.bean.User;
+import com.example.mybatismuti.db1.service.UserService;
+import com.example.mybatismuti.db2.service.MoneyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,8 +20,16 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping("/query")
-    public User testQuery() {
+    @Autowired
+    private MoneyService moneyService;
+
+    @RequestMapping("/queryMoney")
+    public Money testQuery1() {
+        return moneyService.selectMoneyById(1);
+    }
+
+    @RequestMapping("/queryUser")
+    public User testQuery2() {
         return userService.selectUserByName("Daisy");
     }
 
@@ -41,8 +51,4 @@ public class UserController {
         return "OK";
     }
 
-    @RequestMapping("/newQuery")
-    public User newQuery() {
-        return userService.newSelectUserByName("SnailClimb");
-    }
 }

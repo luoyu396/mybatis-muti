@@ -18,7 +18,7 @@ import javax.sql.DataSource;
  * @create 2022-01-27
  */
 @Configuration
-@MapperScan(basePackages = "top.snailclimb.db2.dao", sqlSessionTemplateRef = "db2SqlSessionTemplate")
+@MapperScan(basePackages = "com.example.mybatismuti.db2.dao", sqlSessionTemplateRef = "db2SqlSessionTemplate")
 public class DataSource2Config {
 
     @Bean(name = "db2DataSource")

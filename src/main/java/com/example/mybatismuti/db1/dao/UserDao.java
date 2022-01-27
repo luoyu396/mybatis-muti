@@ -2,6 +2,7 @@ package com.example.mybatismuti.db1.dao;
 
 import com.example.mybatismuti.bean.User;
 import org.apache.ibatis.annotations.*;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 import java.util.List;
 
@@ -9,7 +10,7 @@ import java.util.List;
  * @author tanbb
  * @create 2022-01-26
  */
-@Mapper
+@Qualifier("db1SqlSessionTemplate")
 public interface UserDao {
 
     /**
@@ -43,8 +44,4 @@ public interface UserDao {
     @Delete("DELETE from user WHERE id = #{id}")
     void deleteUser(@Param("id") int id);
 
-    /**
-     * 通过名字查询用户信息
-     */
-    User newFindUserByName(String name);
 }
